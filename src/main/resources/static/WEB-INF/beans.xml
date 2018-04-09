@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxrs="http://cxf.apache.org/jaxrs"  
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xsi:schemaLocation="   
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd   
+       http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd   
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">  
+             
+    <!-- 引入CXF下面的配置文件 -->  
+    <import resource="classpath:META-INF/cxf/cxf.xml" />
+    <import resource="classpath:META-INF/cxf/cxf-servlet.xml" />  
+  
+    <!-- 将Bean托管给Spring --> 
+    <bean id="testService" class="com.smokeTest.TestService"></bean>
+    <bean id="typeInstanceAnalyseService" class="com.infoDiscover.infoAnalyse.service.restful.typeInstanceAnalyse.TypeInstanceAnalyseService"></bean>
+    <bean id="infoDiscoverSpaceAnalyseService" class="com.infoDiscover.infoAnalyse.service.restful.infoDiscoverSpaceAnalyse.InfoDiscoverSpaceAnalyseService"></bean>
+    <bean id="infoDiscoverSpaceDataCRUDService" class="com.infoDiscover.infoAnalyse.service.restful.infoDiscoverSpaceDataCRUD.InfoDiscoverSpaceDataCRUDService"></bean>
+    <bean id="typeDataStatisticsAnalyseService" class="com.infoDiscover.infoAnalyse.service.restful.typeDataStatisticsAnalyse.TypeDataStatisticsAnalyseService"></bean>
+    <bean id="systemManagementService" class="com.infoDiscover.infoAnalyse.service.restful.systemManagement.SystemManagementService"></bean>
+    <bean id="cESDataImportService" class="com.businessExtension.restful.zhuhaiCES_DataImport.CESDataImportService"></bean>
+
+    <!-- 配置需要暴露的BeanService -->  
+    <jaxrs:server id="restContainer" address="/">  
+        <jaxrs:serviceBeans>
+            <ref bean="testService" />
+            <ref bean="typeInstanceAnalyseService" />
+            <ref bean="infoDiscoverSpaceAnalyseService" />
+            <ref bean="infoDiscoverSpaceDataCRUDService" />
+            <ref bean="typeDataStatisticsAnalyseService" />
+            <ref bean="systemManagementService" />
+            <ref bean="cESDataImportService" />
+        </jaxrs:serviceBeans>         
+        <jaxrs:providers> 
+        	<bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider"/> 
+        </jaxrs:providers>
+    </jaxrs:server>   
+</beans> 

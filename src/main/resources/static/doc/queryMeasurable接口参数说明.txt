@@ -1,0 +1,70 @@
+queryMeasurable 参数说明：
+################################################################################################################################
+[必填]discoverSpaceName：空间名称
+[必填]type：数据类型（Fact，Dimension，Relation）
+[必填]typeName：数据类型名称
+pageSize：返回数据的单页数据量
+startPage：返回数据的启始页
+endPage：返回数据的结束页
+resultNumber：返回数据总数（该属性不能同pageSize，startPage，endPage同时使用，用来在不分页的情况下直接返回指定数量的数据）
+defaultFilteringItem：默认过滤条件，在使用query 过滤参数的情况下该属性必须出现。（相当于SELECT × FROM typeName WHERE 后的第一个条件）
+andFilteringItemList：与过滤条件列表（相当于SELECT × FROM typeName WHERE 默认过滤条件 后的一系列 AND 过滤条件）
+orFilteringItemList：或过滤条件列表（相当于SELECT × FROM typeName WHERE 默认过滤条件 后的一系列 OR 过滤条件）
+
+FilteringItem 参数说明：
+################################################################################################################################
+[必填]filteringItemType：过滤条件类型，有以下几种 
+BETWEEN,EQUAL,GREATER_THAN_EQUAL,GREATER_THAN,IN_VALUE,LESS_THAN_EQUAL,LESS_THAN,NOT_EQUAL,NULL_VALUE,REGULAR_MATCH,SIMILAR
+reverseCondition：当前条件取反（默认为false，为true时相当于 SELECT × FROM y WHERE NOT(过滤条件） ）
+[必填]attributeName：过滤用属性名称
+[必填]attributeType：过滤用属性类型，有以下几种 
+String,Int,Long,Double,Float,Boolean,Date,Short（不提供本参数时数据会被当做String类型处理。Date类型的数据必须是long类型的时间格式）
+attributeValue：过滤用属性值
+attributeFromValue：过滤用属性最小值
+attributeToValue：过滤用属性最大值
+attributeValues：过滤用属性多项值
+matchingType：查找相似String过滤用属性值匹配类型，有以下三种 BeginWith,EndWith,Contain
+
+BETWEEN 所需必填值：
+======================
+attributeName ，attributeFromValue，attributeToValue
+
+EQUAL 所需必填值：
+======================
+attributeName ，attributeValue
+
+GREATER_THAN_EQUAL 所需必填值：
+======================
+attributeName ，attributeValue
+
+GREATER_THAN 所需必填值：
+======================
+attributeName ，attributeValue
+
+IN_VALUE 所需必填值：
+======================
+attributeName ，attributeValues
+
+LESS_THAN_EQUAL 所需必填值：
+======================
+attributeName ，attributeValue
+
+LESS_THAN 所需必填值：
+======================
+attributeName ，attributeValue
+
+NOT_EQUAL 所需必填值：
+======================
+attributeName ，attributeValue
+
+NULL_VALUE 所需必填值：
+======================
+attributeName
+
+REGULAR_MATCH 所需必填值：
+======================
+attributeName ，attributeValue（此处attributeValue必须是正则表达式）
+
+SIMILAR 所需必填值：
+======================
+attributeName ，matchingType，attributeValue（此处attributeValue会被做为String处理）
