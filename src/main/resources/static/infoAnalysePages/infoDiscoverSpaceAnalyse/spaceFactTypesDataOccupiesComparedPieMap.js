@@ -4,7 +4,7 @@ $(document).ready(function (){
     if(!discoverSpaceName){return;}
     if(graphHeight){
         document.getElementById('container').style.height=""+graphHeight+"px";    }
-    var restURL=APPLICATION_REST_SERVICE_CONTEXT+"/ws/infoDiscoverSpaceAnalyseService/spaceFactTypesDataCount/"+discoverSpaceName+"/";
+    var restURL=APPLICATION_REST_SERVICE_CONTEXT+"infoDiscoverSpaceAnalyseService/spaceFactTypesDataCount/"+discoverSpaceName+"/";
     $.ajax({
         url: restURL
     }).then(function(data) {

@@ -5,7 +5,7 @@ $(document).ready(function() {
     if(graphHeight){
         document.getElementById('container').style.height=""+graphHeight+"px";
     }
-    var restURL=APPLICATION_REST_SERVICE_CONTEXT+"/ws/infoDiscoverSpaceAnalyseService/spaceRelationTypesTreeDataCount/"+discoverSpaceName+"/";
+    var restURL=APPLICATION_REST_SERVICE_CONTEXT+"infoDiscoverSpaceAnalyseService/spaceRelationTypesTreeDataCount/"+discoverSpaceName+"/";
     $.ajax({
         url: restURL
     }).then(function(data) {

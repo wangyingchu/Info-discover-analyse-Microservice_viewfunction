@@ -109,20 +109,20 @@ $(document).ready(function() {
     var restURL=null;
     if(pathType=="SHORTEST"){
         if(!pathNumber){return;} 
-        restURL=APPLICATION_REST_SERVICE_CONTEXT+"/ws/typeInstanceAnalyseService/typeInstancesShortestPathsExplore/"+discoverSpaceName+"/"+relationableAId+"/"+relationableBId+"/"+pathNumber+"/";
+        restURL=APPLICATION_REST_SERVICE_CONTEXT+"typeInstanceAnalyseService/typeInstancesShortestPathsExplore/"+discoverSpaceName+"/"+relationableAId+"/"+relationableBId+"/"+pathNumber+"/";
     }
     if(pathType=="LONGEST"){
         if(!pathNumber){return;} 
-        restURL=APPLICATION_REST_SERVICE_CONTEXT+"/ws/typeInstanceAnalyseService/typeInstancesLongestPathsExplore/"+discoverSpaceName+"/"+relationableAId+"/"+relationableBId+"/"+pathNumber+"/";
+        restURL=APPLICATION_REST_SERVICE_CONTEXT+"typeInstanceAnalyseService/typeInstancesLongestPathsExplore/"+discoverSpaceName+"/"+relationableAId+"/"+relationableBId+"/"+pathNumber+"/";
     }
     if(pathType=="ALL"){
-        restURL=APPLICATION_REST_SERVICE_CONTEXT+"/ws/typeInstanceAnalyseService/typeInstancesAllPathsExplore/"+discoverSpaceName+"/"+relationableAId+"/"+relationableBId+"/";
+        restURL=APPLICATION_REST_SERVICE_CONTEXT+"typeInstanceAnalyseService/typeInstancesAllPathsExplore/"+discoverSpaceName+"/"+relationableAId+"/"+relationableBId+"/";
     }
     if(pathType=="PATHDATA"){
 		if(!pathDataIds){return;}
 		pathDataIds=pathDataIds.replace(/#/g, "%23");
     	pathDataIds=pathDataIds.replace(/:/g, "%3a");
-        restURL=APPLICATION_REST_SERVICE_CONTEXT+"/ws/typeInstanceAnalyseService/typeInstancesPathsContainDatasExplore/"+discoverSpaceName+"/"+relationableAId+"/"+relationableBId+"/"+pathDataIds+"/";
+        restURL=APPLICATION_REST_SERVICE_CONTEXT+"typeInstanceAnalyseService/typeInstancesPathsContainDatasExplore/"+discoverSpaceName+"/"+relationableAId+"/"+relationableBId+"/"+pathDataIds+"/";
     }
 
     $.ajax({
@@ -272,7 +272,7 @@ $(document).ready(function() {
             var currentClickSourceNodeId=selectedDataInstanceId;
             selectedDataInstanceId=selectedDataInstanceId.replace(/#/g, "%23");
             selectedDataInstanceId=selectedDataInstanceId.replace(/:/g, "%3a");
-            var restURL=APPLICATION_REST_SERVICE_CONTEXT+"/ws/typeInstanceAnalyseService/typeInstanceRelationsExplore/"+discoverSpaceName+"/"+selectedDataInstanceId+"/";
+            var restURL=APPLICATION_REST_SERVICE_CONTEXT+"typeInstanceAnalyseService/typeInstanceRelationsExplore/"+discoverSpaceName+"/"+selectedDataInstanceId+"/";
             $.ajax({
                 url: restURL
             }).then(function(data) {

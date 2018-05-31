@@ -75,7 +75,7 @@ $(document).ready(function() {
 	pathRelationIds=pathRelationIds.replace(/#/g, "%23");
     pathRelationIds=pathRelationIds.replace(/:/g, "%3a");
 
-    var restURL=APPLICATION_REST_SERVICE_CONTEXT+"/ws/typeInstanceAnalyseService/typeInstancesSpecifiedPathExplore/"+discoverSpaceName+"/"+relationableAId+"/"+relationableBId+"/"+pathRelationIds+"/";
+    var restURL=APPLICATION_REST_SERVICE_CONTEXT+"typeInstanceAnalyseService/typeInstancesSpecifiedPathExplore/"+discoverSpaceName+"/"+relationableAId+"/"+relationableBId+"/"+pathRelationIds+"/";
     $.ajax({
         url: restURL
     }).then(function(data) {		
@@ -195,7 +195,7 @@ $(document).ready(function() {
             var currentClickSourceNodeId=selectedDataInstanceId;
             selectedDataInstanceId=selectedDataInstanceId.replace(/#/g, "%23");
             selectedDataInstanceId=selectedDataInstanceId.replace(/:/g, "%3a");
-            var restURL=APPLICATION_REST_SERVICE_CONTEXT+"/ws/typeInstanceAnalyseService/typeInstanceRelationsExplore/"+discoverSpaceName+"/"+selectedDataInstanceId+"/";
+            var restURL=APPLICATION_REST_SERVICE_CONTEXT+"typeInstanceAnalyseService/typeInstanceRelationsExplore/"+discoverSpaceName+"/"+selectedDataInstanceId+"/";
             $.ajax({
                 url: restURL
             }).then(function(data) {

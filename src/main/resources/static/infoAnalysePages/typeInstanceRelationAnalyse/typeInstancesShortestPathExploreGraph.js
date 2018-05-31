@@ -71,7 +71,7 @@ $(document).ready(function() {
 	relationableBId=relationableBId.replace(/#/g, "%23");
     relationableBId=relationableBId.replace(/:/g, "%3a");
 
-    var restURL=APPLICATION_REST_SERVICE_CONTEXT+"/ws/typeInstanceAnalyseService/typeInstancesShortestPathExplore/"+discoverSpaceName+"/"+relationableAId+"/"+relationableBId+"/";
+    var restURL=APPLICATION_REST_SERVICE_CONTEXT+"typeInstanceAnalyseService/typeInstancesShortestPathExplore/"+discoverSpaceName+"/"+relationableAId+"/"+relationableBId+"/";
     $.ajax({
         url: restURL
     }).then(function(data) {		
@@ -191,7 +191,7 @@ $(document).ready(function() {
             var currentClickSourceNodeId=selectedDataInstanceId;
             selectedDataInstanceId=selectedDataInstanceId.replace(/#/g, "%23");
             selectedDataInstanceId=selectedDataInstanceId.replace(/:/g, "%3a");
-            var restURL=APPLICATION_REST_SERVICE_CONTEXT+"/ws/typeInstanceAnalyseService/typeInstanceRelationsExplore/"+discoverSpaceName+"/"+selectedDataInstanceId+"/";
+            var restURL=APPLICATION_REST_SERVICE_CONTEXT+"typeInstanceAnalyseService/typeInstanceRelationsExplore/"+discoverSpaceName+"/"+selectedDataInstanceId+"/";
             $.ajax({
                 url: restURL
             }).then(function(data) {

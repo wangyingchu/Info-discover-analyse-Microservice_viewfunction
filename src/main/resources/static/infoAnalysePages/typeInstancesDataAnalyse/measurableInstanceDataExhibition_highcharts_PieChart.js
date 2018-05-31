@@ -6,7 +6,7 @@ $(document).ready(function() {
     if(!discoverSpaceName){return;}
     if(!measurableId){return;}
     if(!pieProperties){return;}
-    var restBaseURL=APPLICATION_REST_SERVICE_CONTEXT+"/ws/typeInstanceAnalyseService/typeInstanceDetailInfo/";
+    var restBaseURL=APPLICATION_REST_SERVICE_CONTEXT+"typeInstanceAnalyseService/typeInstanceDetailInfo/";
     if(graphHeight){
         document.getElementById('container').style.height=""+graphHeight+"px";
     }

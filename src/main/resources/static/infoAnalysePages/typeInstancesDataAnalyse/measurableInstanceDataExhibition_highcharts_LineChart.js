@@ -7,7 +7,7 @@ $(document).ready(function() {
     if(!discoverSpaceName){return;}
     if(!measurableIds){return;}
     if(!lineProperties){return;}
-    var restBaseURL=APPLICATION_REST_SERVICE_CONTEXT+"/ws/typeInstanceAnalyseService/typeInstancesDetailInfo/";
+    var restBaseURL=APPLICATION_REST_SERVICE_CONTEXT+"typeInstanceAnalyseService/typeInstancesDetailInfo/";
     if(graphHeight){
         document.getElementById('container').style.height=""+graphHeight+"px";
     }

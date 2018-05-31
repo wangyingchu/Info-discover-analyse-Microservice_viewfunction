@@ -22,15 +22,15 @@ $(document).ready(function() {
     var restBaseURL;
     var measurableTypeDisplayName="";
     if(measurableType=="FACT"){
-        restBaseURL=APPLICATION_REST_SERVICE_CONTEXT+"/ws/typeDataStatisticsAnalyseService/factTypePropertiesDataList/";
+        restBaseURL=APPLICATION_REST_SERVICE_CONTEXT+"typeDataStatisticsAnalyseService/factTypePropertiesDataList/";
         measurableTypeDisplayName="\u4e8b\u5b9e\u6570\u636e";
     }
     if(measurableType=="DIMENSION"){
-        restBaseURL=APPLICATION_REST_SERVICE_CONTEXT+"/ws/typeDataStatisticsAnalyseService/dimensionTypePropertiesDataList/";
+        restBaseURL=APPLICATION_REST_SERVICE_CONTEXT+"typeDataStatisticsAnalyseService/dimensionTypePropertiesDataList/";
         measurableTypeDisplayName="\u7ef4\u5ea6\u6570\u636e";
     }
     if(measurableType=="RELATION"){
-        restBaseURL=APPLICATION_REST_SERVICE_CONTEXT+"/ws/typeDataStatisticsAnalyseService/relationTypePropertiesDataList/";
+        restBaseURL=APPLICATION_REST_SERVICE_CONTEXT+"typeDataStatisticsAnalyseService/relationTypePropertiesDataList/";
         measurableTypeDisplayName="\u5173\u7cfb\u6570\u636e";
     }
     if(!restBaseURL){

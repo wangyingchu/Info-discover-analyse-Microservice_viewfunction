@@ -13,7 +13,7 @@ $(document).ready(function() {
     if(!lngProperty){return;}
     if(!titleProperty){return;}
 
-    var restBaseURL=APPLICATION_REST_SERVICE_CONTEXT+"/ws/typeInstanceAnalyseService/typeInstancesDetailInfo/";
+    var restBaseURL=APPLICATION_REST_SERVICE_CONTEXT+"typeInstanceAnalyseService/typeInstancesDetailInfo/";
     if(graphHeight){
         document.getElementById('mapid').style.height=""+graphHeight+"px";
     }

@@ -23,15 +23,15 @@ $(document).ready(function() {
     var restBaseURL;
     var measurableTypeDisplayName="";
     if(measurableType=="FACT"){
-        restBaseURL=APPLICATION_REST_SERVICE_CONTEXT+"/ws/typeDataStatisticsAnalyseService/factTypePropertiesDataList/";
+        restBaseURL=APPLICATION_REST_SERVICE_CONTEXT+"typeDataStatisticsAnalyseService/factTypePropertiesDataList/";
         measurableTypeDisplayName="事实数据";
     }
     if(measurableType=="DIMENSION"){
-        restBaseURL=APPLICATION_REST_SERVICE_CONTEXT+"/ws/typeDataStatisticsAnalyseService/dimensionTypePropertiesDataList/";
+        restBaseURL=APPLICATION_REST_SERVICE_CONTEXT+"typeDataStatisticsAnalyseService/dimensionTypePropertiesDataList/";
         measurableTypeDisplayName="维度数据";
     }
     if(measurableType=="RELATION"){
-        restBaseURL=APPLICATION_REST_SERVICE_CONTEXT+"/ws/typeDataStatisticsAnalyseService/relationTypePropertiesDataList/";
+        restBaseURL=APPLICATION_REST_SERVICE_CONTEXT+"typeDataStatisticsAnalyseService/relationTypePropertiesDataList/";
         measurableTypeDisplayName="关系数据";
     }
     if(!restBaseURL){

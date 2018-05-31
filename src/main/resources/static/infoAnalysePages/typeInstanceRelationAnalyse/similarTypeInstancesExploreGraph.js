@@ -73,7 +73,7 @@ $(document).ready(function() {
 	dimensionsIdList=dimensionsIdList.replace(/#/g, "%23");
     dimensionsIdList=dimensionsIdList.replace(/:/g, "%3a");
 
-    var restURL=APPLICATION_REST_SERVICE_CONTEXT+"/ws/typeInstanceAnalyseService/similarTypeInstancesExplore/"+discoverSpaceName+"/"+sourceDataInstanceId+"/"+dimensionsIdList+"/"+filteringPattern+"/";
+    var restURL=APPLICATION_REST_SERVICE_CONTEXT+"typeInstanceAnalyseService/similarTypeInstancesExplore/"+discoverSpaceName+"/"+sourceDataInstanceId+"/"+dimensionsIdList+"/"+filteringPattern+"/";
     $.ajax({
         url: restURL
     }).then(function(data) {
@@ -255,7 +255,7 @@ $(document).ready(function() {
             var currentClickSourceNodeId=selectedDataInstanceId;
             selectedDataInstanceId=selectedDataInstanceId.replace(/#/g, "%23");
             selectedDataInstanceId=selectedDataInstanceId.replace(/:/g, "%3a");
-            var restURL=APPLICATION_REST_SERVICE_CONTEXT+"/ws/typeInstanceAnalyseService/typeInstanceRelationsExplore/"+discoverSpaceName+"/"+selectedDataInstanceId+"/";
+            var restURL=APPLICATION_REST_SERVICE_CONTEXT+"typeInstanceAnalyseService/typeInstanceRelationsExplore/"+discoverSpaceName+"/"+selectedDataInstanceId+"/";
             $.ajax({
                 url: restURL
             }).then(function(data) {
