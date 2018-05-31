@@ -5,7 +5,7 @@
 
 	<groupId>com.viewfunction</groupId>
 	<artifactId>info-discover-analyse-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0.RELEASE</version>
 	<packaging>jar</packaging>
 
 	<name>info-discover-analyse-service</name>
@@ -24,6 +24,7 @@
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Finchley.M9</spring-cloud.version>
 		<doorls.runtime.version>6.4.0.Final</doorls.runtime.version>
+		<cxf.version>3.2.4</cxf.version>
 	</properties>
 
 	<dependencies>
@@ -49,7 +50,42 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
+		<!-- cxf -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-simple</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxws</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-databinding-aegis</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-local</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-management</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
         <!-- drools -->
        <dependency>
            <groupId>org.kie</groupId>
@@ -102,7 +138,47 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>com.bms.Main.Main</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>assemble-all</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 		</plugins>
+        <resources>
+            <resource>
+                <directory>lib</directory>
+                <targetPath>BOOT-INF/lib/</targetPath>
+                <includes>
+                    <include>**/*.jar</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <targetPath>BOOT-INF/classes/</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <targetPath>./</targetPath>
+            </resource>
+        </resources>
 	</build>
 
 	<repositories>
@@ -123,6 +199,4 @@
 			</snapshots>
 		</repository>
 	</repositories>
-
-
 </project>
